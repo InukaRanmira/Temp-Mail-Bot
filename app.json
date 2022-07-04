@@ -23,7 +23,13 @@
         "DATABASE": {
             "description": "get from mongo",
             "required": true
-        }
+        },
+        "BOT_USERNAME": {
+            "description": "Your Bot Username without @",
+            "required": true
+        },
+        "LOG_GROUP": "Your Log Group ID With -",
+        "required" : true
     },
     "formation": {
     "worker": {
