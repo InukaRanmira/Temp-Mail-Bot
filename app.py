@@ -46,7 +46,7 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @ImDenuwan | @szteambots 
+**Developer** : @InukaRanmira | @AboutInuka 
 """
 
 
@@ -54,10 +54,10 @@ start_button = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("👥 Group", url="https://t.me/slbotzone"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/szteambots")
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/AboutInuka")
                 ],
 		        [
-                    InlineKeyboardButton("➕Add to Group ➕", url=f"http://t.me/szFakeMailBot?startgroup=new"),
+                    InlineKeyboardButton("➕Add to Group ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),
                 ]    
             ]
 )
@@ -65,15 +65,15 @@ start_button = InlineKeyboardMarkup(
 @app.on_message(filters.command("start"))
 async def start(_, message: Message):
     try:
-       await message._client.get_chat_member(-1001325914694, message.from_user.id)
+       await message._client.get_chat_member({LOG_GROUP}, message.from_user.id)
     except UserNotParticipant:
        await app.send_message(
 			chat_id=message.from_user.id,
 			text=f"""
 🚧 **Access Denied** {message.from_user.mention}
 You must,
-🔹[join Our Telegram Channel](https://t.me/szteambots).
-@szteambots
+🔹[join Our Telegram Channel](https://t.me/AboutInuka).
+@AbouInuka
 """)
        return
     name = message.from_user.id
@@ -97,7 +97,8 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("SZ team bots 🇱🇰", url="https://t.me/szteambots")]])
+            [[InlineKeyboardButton("About Inuka 🇱🇰", url="https://t.me/AboutInuka")]])
+
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -115,7 +116,7 @@ async def fakemailgen(_, message: Message):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-**Powered by** : @szteambots """,
+**Powered by** : @AboutInuka""",
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -155,7 +156,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**Powered by** : @szteambots""",
+**Powered by** : @AboutInuka""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
@@ -235,7 +236,7 @@ async def fakemailgen(_, message: Message):
 #Owner commands pannel here
 #user_count, broadcast_tool
 
-@app.on_message(filters.command("stats") & filters.user(1467358214))
+@app.on_message(filters.command("stats") & filters.user(1696230986))
 async def stats(_, message: Message):
     name = message.from_user.id
     served_chats = len(await get_served_chats())
@@ -276,7 +277,7 @@ async def broadcast_messages(user_id, message):
     except Exception as e:
         return False, "Error"
 
-@app.on_message(filters.private & filters.command("bcast") & filters.user([1467358214,1483482076]) & filters.reply)
+@app.on_message(filters.private & filters.command("broadcast") & filters.user([1696230986]) & filters.reply)
 async def broadcast_message(_, message):
     b_msg = message.reply_to_message
     chats = await get_served_users() 
@@ -292,12 +293,12 @@ async def broadcast_message(_, message):
     await m.edit(f"""
 Broadcast Completed:.""")    
 
-@app.on_message(filters.command("ads"))
+@app.on_message(filters.command("About"))
 async def ads_message(_, message):
 	await app.forward_messages(
 		chat_id = message.chat.id, 
-		from_chat_id = int(-1001356358215), 
-		message_ids = 2255,
+		from_chat_id = int(-1001303840179), 
+		message_ids = 2,
 	)
 
 print("I'm Alive Now!")
