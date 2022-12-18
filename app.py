@@ -1,8 +1,5 @@
-#=================================================================================================
-# Copyright (C) 2022 by szsupunma@Github, < https://github.com/szsupunma >.
-# Released under the "GNU v3.0 License Agreement".
-# All rights reserved.
-#=================================================================================================
+
+
 
 import os
 import asyncio
@@ -53,7 +50,7 @@ Send /domains to get list of Available Domains.
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/slbotzone"),
+                    InlineKeyboardButton("👩‍💻 Developer", url="https://t.me/InukaRanmira"),
                     InlineKeyboardButton("🗣 Channel", url="https://t.me/AboutInuka")
                 ],
 		        [
