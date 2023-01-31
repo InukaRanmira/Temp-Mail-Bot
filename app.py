@@ -43,15 +43,15 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @InukaRanmira | @AboutInuka 
+**Developer** : @Smart_TechLK | @AboutInuka
 """
 
 
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👩‍💻 Developer", url="https://t.me/InukaRanmira"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/AboutInuka")
+                    InlineKeyboardButton("👩‍💻 Developer", url="https://t.me/AboutINuka"),
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/Smart_TechLK")
                 ],
 		        [
                     InlineKeyboardButton("➕Add to Group ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),
@@ -69,7 +69,7 @@ async def start(_, message: Message):
 			text=f"""
 🚧 **Access Denied** {message.from_user.mention}
 You must,
-🔹[join Our Telegram Channel](https://t.me/AboutInuka).
+🔹[join Our Telegram Channel](https://t.me/Smart_TechLK).
 @AbouInuka
 """)
        return
@@ -94,7 +94,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("About Inuka 🇱🇰", url="https://t.me/AboutInuka")]])
+            [[InlineKeyboardButton("SMΛЯT TΞϾH 🇱🇰", url="https://t.me/Smart_TechLK")]])
 
 
 #********************************************************************************
@@ -113,7 +113,7 @@ async def fakemailgen(_, message: Message):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-**Powered by** : @AboutInuka""",
+**Powered by** : @Smart_TechLK""",
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -153,7 +153,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**Powered by** : @AboutInuka""",
+**Powered by** : @Smart_TechLK""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
