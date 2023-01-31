@@ -1,8 +1,3 @@
-#=================================================================================================
-# Copyright (C) 2022 by szsupunma@Github, < https://github.com/szsupunma >.
-# Released under the "GNU v3.0 License Agreement".
-# All rights reserved.
-#=================================================================================================
 import os
 from motor.motor_asyncio import AsyncIOMotorClient
 
